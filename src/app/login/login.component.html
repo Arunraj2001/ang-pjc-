@@ -1,0 +1,69 @@
+<div  class="btn">
+<div *ngIf="signin ==true">
+    <h1>sign in</h1>
+    <div>
+        <h2><b>f</b> sign in with Facebook</h2>
+    </div>
+    <div>
+        <h3><b>G</b> sign in with Google</h3>
+    </div>
+    <div>
+        <input type="text" name="username" placeholder="username">
+    </div><br>
+    <div>
+        <input type="password" name="pwd" placeholder="password">
+    </div><br>
+    <div>
+        <a href="">Forget password?</a>
+    </div><br>
+    <div>
+        <button>Log in</button>
+    </div><br>
+    <div class="ar">
+        <span>Don't have account</span>
+        <span (click)="Signup()" id="ma"> sign up </span>
+    </div>
+</div>
+
+<div *ngIf="signup ==true">
+    <div class="box"></div>
+    <h1>sign up</h1>
+    <div>
+        <label>First name</label><br> <input type="fname" name="fname"><br>
+
+        <label>Last name</label><br><input type="lastname" name="lname">
+    </div><br>
+    <div>
+        <label>Email</label><br> <input type="email">
+        <p>w'ill never your email someone else</p>
+    </div>
+    <div>
+        <input type="radio" name="gender" value="male">male
+        <input type="radio" name="gender" value="female">female
+    </div><BR>
+    <div>
+        <label>city</label> <input type="text" name="city">
+        <label>country</label><select name="country">
+            <option name="country" value="USA">USA</option>
+            <option name="country" value="UK">UK</option>
+            <option name="country" value="EROPE">EROPE</option>
+        </select>
+    </div><br>
+    <div>
+        <label>create password</label> <br><input type="password" placeholder="*********"><br>
+        <label>reapeat password</label> <br><input type="password" placeholder="**********">
+    </div>
+    <div>
+        <button>Register</button>
+    </div>
+    <div>
+        <input type="checkbox">
+        <a href="">iam agree with trems and contitions</a>
+         
+    </div><br>
+    <div class="ar">
+        <span>Have an account?</span>
+        <span (click)="login()"  id="ma">Log in</span> 
+    </div>
+</div>
+</div>

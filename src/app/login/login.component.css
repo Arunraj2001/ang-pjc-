@@ -1,0 +1,15 @@
+.btn{
+     width:30%; 
+     margin: auto; 
+    border: 3px solid rgb(12, 1, 1);
+     padding: 2%; 
+     background-color:slategray;
+     margin-top:3%;
+    
+}
+.ar{
+    text-align: center;
+}
+#ma{
+ cursor: pointer;
+}
