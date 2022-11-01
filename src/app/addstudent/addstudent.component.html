@@ -1,0 +1,48 @@
+<p>addstudent works!</p>
+
+<div><label>student rollno</label><input type="text"></div><br>
+<div><label>student name</label><input type="text"></div><br>
+<div><label>student class</label><input type="text"></div><br>
+<div><label>student section</label><input type="text"></div><br>
+<div><label>student age</label><input type="text"></div><br>
+<div><label>student cnt</label><input type="text"></div><br>
+
+<button>add student</button>
+
+<h2>people list</h2>
+<ul>
+    <li *ngFor="let p of peoplelst"[ngStyle]="{'color':p.country == 'USA'?'red':'blue'}">
+      {{p.country | uppercase}}
+      {{p.name}}
+    </li>
+</ul>
+
+ <ul> 
+    <li *ngFor="let p of peoplelst" [ngStyle]=" {'color':getcolor(p.country)}">
+      {{p.country | lowercase}}
+      {{p.name}}
+    </li>
+</ul> 
+
+<P>ngclass -applying class </P>
+<ul> 
+    <li *ngFor="let p of peoplelst" [ngClass]="{'cntry':getcolor(p.country)}">
+      {{p.country | lowercase}}
+      {{p.name}}
+    </li>
+</ul> 
+
+<p>angular pipes</p>
+<span>Today's date{{todayDt}}</span><br />
+<span>Full Date : {{todayDt}}</span><br />
+<span>Short Date : {{todayDt | date:'shortDate'}}</span><br />
+<span>Medium Date : {{todayDt | date:'mediumDate'}}</span><br />
+<span>Full Date : {{todayDt | date:'fullDate'}}</span><br />
+<span>Time:{{todayDt | date:'HH:MM'}}</span><br />
+<span>Time: {{todayDt | date :'hh:mm:ss a'}}</span><br /> 
+
+<p>{{jsonval | json}}</p>
+<P>{{months}}</P>
+<p>{{months | slice:3:8}}</p>
+<P>{{amount | number:'2.2'}}</P>
+<p>{{marks | percent:'2.2'}}</p>

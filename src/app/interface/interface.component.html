@@ -1,0 +1,52 @@
+<P>im arun</P>
+<h1>{{title}}</h1>
+<h1>{{arun}}</h1>
+
+<button [disabled] ="isdisables"(click)="submitform()">submit</button>
+
+ <P>ngIf directives</P>
+
+
+  <button (click)="student()">show sduent data</button>  
+<input type="radio" name="usertyp" (click)="toggleusertype('T')" checked>Teacher
+<input type="radio" name="usertyp" (click)="toggleusertype('S')" >Student
+<div *ngIf="usertype == 'teacher'">
+    <h3>teacher rollno:{{studentdata.rollno}}</h3>
+    <h3>teacher name:{{studentdata.name}}</h3>
+    <h3>teacher class:{{studentdata.class}}</h3>
+</div> 
+
+<div *ngIf="usertype == 'student'">
+    <h3>student rollno:{{studentdata.rollno}}</h3>
+    <h3>student name:{{studentdata.name}}</h3>
+    <h3>student class:{{studentdata.class}}</h3>
+    <h3>student section:{{studentdata.section}}</h3>
+    <h3>student age:{{studentdata.age}}</h3>
+     <h3>student cnt:{{studentdata.cnt}}</h3> 
+</div>
+
+<ul>
+    <li *ngFor=" let sub of  subject ;let in =index">
+    {{in+1}} {{sub}}
+    </li>
+</ul>
+<div>
+    <table>
+        <th>rollno</th>
+        <th>student name</th>
+        <th>student class</th>
+        <th>student section</th>
+        <th>student age</th>
+        <th>student contact</th>
+
+        <tr *ngFor="let student of studentlist">
+            <td>{{student.rollno}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.class}}</td>
+            <td>{{student.section}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.cnt}}</td>
+        </tr>
+        
+    </table>
+</div>
