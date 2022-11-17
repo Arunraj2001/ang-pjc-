@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArgumentOutOfRangeError } from 'rxjs';
 import{student} from '../models/studentmdl';
 import{studentcls} from'../models/student';
+import{Router}from '@angular/router';
 
 @Component({
   selector: 'app-interface',
@@ -91,9 +92,11 @@ submitform(){
   console.log(this.arun)
   this.arun="im in chennai"
 }
-  constructor() { }
+  constructor(private rout: Router) { }
 
   ngOnInit(): void {
+
+
   }
   student() {
     this.stu = true;
@@ -107,4 +110,10 @@ submitform(){
     }
   }
 
+  redirectToservice(){
+    this.rout.navigateByUrl('/service');
+  }
+
 }
+
+ 

@@ -9,7 +9,9 @@ import { AddstudentComponent } from './addstudent/addstudent.component';
 import { ButtoneventComponent } from './buttonevents/buttonevent.component';
 import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { AddempComponent } from './addemp/addemp.component';
+import {FormsModule, ReactiveFormsModule,}from '@angular/forms';
+import { AddEmpReactiveComponent } from './add-emp-reactive/add-emp-reactive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +20,18 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AddstudentComponent,
     ButtoneventComponent,
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddempComponent,
+    AddEmpReactiveComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
-  bootstrap: [ HeaderComponent,InterfaceComponent,AddstudentComponent,LoginComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

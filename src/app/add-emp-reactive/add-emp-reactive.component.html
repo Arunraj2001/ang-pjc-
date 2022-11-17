@@ -1,0 +1,50 @@
+<h1>add-emp-reactive</h1>
+<form [formGroup]="empfrm" (ngsubmit)="addemp()">
+    <div>
+        <label for="fullname" name="lblname">FULLNAME:</label>
+        <input type="text" name="fullname" id="fullname" formControlName="fullname">
+    </div>
+    <div>
+        <span *ngIf="!empfrm.controls.fullname.valid" class="errmsg">first name should be required and maximun of 10 letter</span>
+    </div>
+    <div>
+        <label for="address" name="lbladdress">ADDRESS:</label>
+        <input type="text" name="address" id="address" formControlName="address">
+    </div>
+    <div>
+        <label for="cnt" name="lblcnt">CONTACT:</label>
+        <input type="text" name="cnt" id="cnt" formControlName="cnt">
+    </div>
+    <div>
+        <label for="cnt" name="lblcnt">DATE OF JOINING:</label>
+        <input type="date" name="doj" id="doj" formControlName="doj">
+    </div>
+    <div>
+        <label>CITY:</label>
+        <select name="city" id="cty" formControlName="city">
+            <option value="chn">chennai</option>
+            <option value="bgr">bengalure</option>
+            <option value="tri">trichy</option>
+            <option value="covai">coiambatore</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!empfrm.valid" (click)="addemp()">EMPLOYEE</button>
+    </div>
+     <!-- <div>
+        <button type="button" (click)="addemp()"> Employee</button>
+    </div> -->
+</form> 
+<div>
+    <p>form values</p>
+    <pre>values : {{empfrm.value | json}}</pre>
+    <pre>is form valid : {{empfrm.valid}}</pre>
+    <pre>touched : {{empfrm.touched}}</pre>
+    <!-- <pre>submitted : {{empfrm.submitted}}</pre>
+
+    <p>individual control value</p>
+    <pre>value : {{name.value}}</pre>
+    <pre>valid : {{name.valid}}</pre>
+    <pre>invalid : {{name.invalid}}</pre>
+    <pre>touched : {{name.touched}}</pre> -->
+</div>

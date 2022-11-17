@@ -1,0 +1,138 @@
+<h1>add employee</h1>
+<form #empForm="ngForm"(ngsubmit)="addemp(empForm)">
+<div>
+    <label for="fullname" name="lblname">FULLNAME:</label>
+    <input type="text" name="fullname" id="fullname" required id="fullname" ngModel>
+</div>
+
+<div>
+    <label for="address" name="lbladdress">ADDRESS:</label>
+    <input type="text" name="address" id="address"minlength="35"
+     ngModel>
+</div>
+
+<div>
+    <label for="cnt" name="lblcnt">CONTACT:</label>
+    <input type="text" name="cnt" id="cnt" ngModel>
+</div>
+<div>
+    <label>CITY:</label>
+    <select name="city" id="cty" ngModel>
+        <option value="chn">chennai</option>
+        <option value="bgr">bengalure</option>
+        <option value="tri">trichy</option>
+        <option value="covai">coiambatore</option>
+
+    </select>
+</div>
+<div>
+    <button type="submit" [disabled]="!empForm.valid" (click)="addemp(empForm)">submit</button>
+</div>
+</form>
+
+<div>
+    <p>form values</p>
+    <pre>values : {{empForm.value | json}}</pre>
+    <pre>is form valid : {{empForm.valid}}</pre>
+    <pre>touched : {{empForm.touched}}</pre>
+    <pre>submitted : {{empForm.submitted}}</pre>
+
+    <!-- <p>individual control value</p>
+    <pre>value : {{name.value}}</pre>
+    <pre>valid : {{name.valid}}</pre>
+    <pre>invalid : {{name.invalid}}</pre>
+    <pre>touched : {{name.touched}}</pre> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
