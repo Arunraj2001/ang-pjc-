@@ -1,5 +1,5 @@
 <h1>add employee</h1>
-<form #empForm="ngForm"(ngsubmit)="addemp(empForm)">
+<form #empForm="ngForm"(ngSubmit)="addemp(empForm)">
 <div>
     <label for="fullname" name="lblname">FULLNAME:</label>
     <input type="text" name="fullname" id="fullname" required id="fullname" ngModel>
@@ -26,7 +26,7 @@
     </select>
 </div>
 <div>
-    <button type="submit" [disabled]="!empForm.valid" (click)="addemp(empForm)">submit</button>
+    <button type="submit" [disabled]="!empForm.valid" >submit</button>
 </div>
 </form>
 

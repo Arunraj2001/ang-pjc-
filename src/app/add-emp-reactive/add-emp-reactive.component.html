@@ -1,11 +1,14 @@
 <h1>add-emp-reactive</h1>
-<form [formGroup]="empfrm" (ngsubmit)="addemp()">
+<form [formGroup]="empfrm" (ngSubmit)="addemp()" novalidate>
     <div>
         <label for="fullname" name="lblname">FULLNAME:</label>
-        <input type="text" name="fullname" id="fullname" formControlName="fullname">
+        <input type="text" name="fullname" id="fullname" formControlName="fullname"
+            [ngClass]="{'errtxt':(!empfrm.controls.fullname.valid)&&(empfrm.controls.fullname.dirty || empfrm.controls.fullname.touched)}">
     </div>
     <div>
-        <span *ngIf="!empfrm.controls.fullname.valid" class="errmsg">first name should be required and maximun of 10 letter</span>
+        <span
+            *ngIf="(!empfrm.controls.fullname?.valid)&&(empfrm.controls.fullname?.dirty || empfrm.controls.fullname?.touched) "
+            class="errmsg">name should be maximum 10 letter</span>
     </div>
     <div>
         <label for="address" name="lbladdress">ADDRESS:</label>
@@ -13,11 +16,26 @@
     </div>
     <div>
         <label for="cnt" name="lblcnt">CONTACT:</label>
-        <input type="text" name="cnt" id="cnt" formControlName="cnt">
+        <input type="text" name="cnt" id="cnt" formControlName="cnt"
+            [ngClass]="{'errgrt': (!empfrm.controls.cnt.valid)&&(empfrm.controls.cnt.dirty || empfrm.controls.cnt.touched)}">
+    </div>
+    <div>
+        <span *ngIf="(!empfrm.controls.cnt?.valid)&&(empfrm.controls.cnt?.dirty || empfrm.controls.cnt?.touched)"
+            class="gtrerr">should be greater them 10</span>
     </div>
     <div>
         <label for="cnt" name="lblcnt">DATE OF JOINING:</label>
-        <input type="date" name="doj" id="doj" formControlName="doj">
+        <input type="text" name="doj" id="doj" formControlName="doj">
+    </div>
+    <div>
+        <label for="cntry">country</label>
+        <select name="cntry" id="cntrysel" formControlName="country" (change)="cntryval()">
+            <option *ngFor="let c of cntrlst" [value]="c.cntryid">{{c.cntryval}}</option>
+        </select>
+    </div>
+    <div>
+        <span *ngIf="(!empfrm.controls.country?.valid)&&(empfrm.controls.country?.dirty || empfrm.controls.country?.touched)"
+            class="selerr">country is required</span>
     </div>
     <div>
         <label>CITY:</label>
@@ -29,20 +47,21 @@
         </select>
     </div>
     <div>
-        <button type="submit" [disabled]="!empfrm.valid" (click)="addemp()">EMPLOYEE</button>
+        <button type="submit" [disabled]="!empfrm.valid">EMPLOYEE</button>
     </div>
-     <!-- <div>
-        <button type="button" (click)="addemp()"> Employee</button>
-    </div> -->
-</form> 
+    <div>
+        <button type="button" (click)="edtemp()">EDIT</button>
+    </div>
+
+</form>
 <div>
     <p>form values</p>
     <pre>values : {{empfrm.value | json}}</pre>
     <pre>is form valid : {{empfrm.valid}}</pre>
-    <pre>touched : {{empfrm.touched}}</pre>
-    <!-- <pre>submitted : {{empfrm.submitted}}</pre>
+    <pre>touched : {{empfrm.touched}}</pre> -->
+    <!-- <pre>submitted : {{empfrm.submitted}}</pre> -->
 
-    <p>individual control value</p>
+    <!-- <p>individual control value</p>
     <pre>value : {{name.value}}</pre>
     <pre>valid : {{name.valid}}</pre>
     <pre>invalid : {{name.invalid}}</pre>
